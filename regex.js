@@ -16,3 +16,11 @@ function searchForMatchs(wordsToUse, arrayData){
         return place.city.match(regex);
     });
 }
+
+function DisplayMatchs(){
+    return console.log(this.value);
+    
+}
+
+const input = document.querySelector("input");
+input.addEventListener("keyup", DisplayMatchs);
