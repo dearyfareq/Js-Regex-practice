@@ -24,14 +24,16 @@ function DisplayMatchs(){
 
     const searchResult = searchForMatchs(this.value, CityData);
     const html = searchResult.map( array => {
+        const highLight = new RegExp(this.value, 'gi');
+        const city = array.city.replace(highLight, `<span class="HL">${this.value}</span> `)
+
         return `
         <li>
-          <span class="name">${array.city}</span>
+          <span class="name">${city}</span>
           <span class="population">${array.population}</span>
         </li>
       `
     }).join('');
-
     list.innerHTML = (html);
 }
 
