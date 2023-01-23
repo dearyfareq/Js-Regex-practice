@@ -19,7 +19,14 @@ function searchForMatchs(wordsToUse, arrayData){
         return place.city.match(regex);
     });
 }
-
+//stackoverflow function
+function numberWithCommas(x) {
+    x = x.toString();
+    var pattern = /(-?\d+)(\d{3})/;
+    while (pattern.test(x))
+        x = x.replace(pattern, "$1,$2");
+    return x;
+}
 function DisplayMatchs(){
 
     const searchResult = searchForMatchs(this.value, CityData);
@@ -30,7 +37,7 @@ function DisplayMatchs(){
         return `
         <li class="li">
           <span>${city}</span>
-          <span>${array.population}</span>
+          <span>${numberWithCommas(array.population)}</span>
         </li>
       `
     }).join('');

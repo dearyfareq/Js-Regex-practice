@@ -28,7 +28,7 @@ li {
     padding: 20px;
     display: flex;
     justify-content: space-between;
-    text-transform: capitalize;
+    text-transform: uppercase;
 }
 input{
     border: 10px solid rgb(201, 201, 201);
