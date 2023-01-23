@@ -28,12 +28,13 @@ function DisplayMatchs(){
         const city = array.city.replace(highLight, `<span class="HL">${this.value}</span> `)
 
         return `
-        <li>
-          <span class="name">${city}</span>
-          <span class="population">${array.population}</span>
+        <li class="li">
+          <span>${city}</span>
+          <span>${array.population}</span>
         </li>
       `
     }).join('');
+
     list.innerHTML = (html);
 }
 
