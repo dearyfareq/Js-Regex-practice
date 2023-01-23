@@ -12,7 +12,7 @@ fetch(endpoint)
     .then(data => data.json())
     .then(json => CityData.push(...json))
 
-
+//return new data after filltering with a match method
 function searchForMatchs(wordsToUse, arrayData){
     return arrayData.filter( place =>{
         const regex = RegExp(wordsToUse, 'gi');
@@ -27,6 +27,8 @@ function numberWithCommas(x) {
         x = x.replace(pattern, "$1,$2");
     return x;
 }
+
+//function to dislay matchs on screen, a bit hairy but can get my head around it?
 function DisplayMatchs(){
 
     const searchResult = searchForMatchs(this.value, CityData);
@@ -44,5 +46,5 @@ function DisplayMatchs(){
 
     list.innerHTML = (html);
 }
-
+//input for all effects to take change
 input.addEventListener("keyup", DisplayMatchs);
